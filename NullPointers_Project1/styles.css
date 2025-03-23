@@ -1,0 +1,418 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0turn;
+    inherits: false;
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+      min-height: 100vh;
+      background: #141819;
+      padding-top: 60px;
+      font-family: "Comfortaa", sans-serif;
+      line-height: 1.6;
+      color: #d5cec0;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+  }
+  
+  .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+  }
+  
+  .logo-text {
+      color: #d5cec0;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+  }
+  
+  .logo-icon {
+      font-size: 1.5rem;
+      color: #f9de90;
+  }
+  
+  /* City Select Styles */
+  .city-select {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 1rem;
+      cursor: pointer;
+      color: #d5cec0;
+  }
+  
+  .city-select:focus {
+      outline: 2px solid #c7a03c;
+      background: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* City Cards Styles */
+  .city-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 2rem;
+      width: 100%;
+      justify-content: center;
+  }
+  
+  .city-card {
+      animation: 2s gradient-angle infinite linear;
+      border: 2px solid transparent;
+      background-image: linear-gradient(#584827, #2d230f),
+          conic-gradient(
+              from var(--gradient-angle),
+              #584827 0%,
+              #c7a03c 37%,
+              #f9de90 30%,
+              #c7a03c 33%,
+              #584827 40%,
+              #584827 50%,
+              #c7a03c 77%,
+              #f9de90 80%,
+              #c7a03c 83%,
+              #584827 90%
+          );
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      border-radius: 20px;
+      padding: 20px;
+      display: grid;
+      place-content: center;
+      place-items: center;
+      text-decoration: none;
+      color: #d5cec0;
+      aspect-ratio: 1/1;
+      transition: transform 0.3s ease;
+  }
+  
+  .city-card:hover {
+      transform: translateY(-5px);
+  }
+  
+  .city-card.selected {
+      background-image: linear-gradient(#584827, #2d230f),
+          conic-gradient(
+              from var(--gradient-angle),
+              #584827 0%,
+              #f9de90 37%,
+              #f9de90 30%,
+              #f9de90 33%,
+              #584827 40%,
+              #584827 50%,
+              #f9de90 77%,
+              #f9de90 80%,
+              #f9de90 83%,
+              #584827 90%
+          );
+  }
+  
+  .city-card h3 {
+      color: #f9de90;
+      font-size: 24px;
+      margin-bottom: 1rem;
+      text-align: center;
+  }
+  
+  .temperature-info {
+      color: #d5cec0;
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+      text-align: center;
+  }
+  
+  .temperature-difference {
+      color: #c7a03c;
+      font-weight: 600;
+      margin-top: 1rem;
+      text-align: center;
+  }
+  
+  .temperature-difference.positive {
+      color: #f9de90;
+  }
+  
+  .temperature-difference.negative {
+      color: #c7a03c;
+  }
+  
+  @keyframes gradient-angle {
+      to {
+          --gradient-angle: 1turn;
+      }
+  }
+  
+ 
+  .weather-table {
+      margin-top: 2rem;
+      background: rgba(88, 72, 39, 0.3);
+      border-radius: 20px;
+      padding: 1.5rem;
+      overflow-x: auto;
+      border: 2px solid #584827;
+  }
+  
+  .weather-table table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+  
+  .weather-table th,
+  .weather-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #584827;
+      color: #d5cec0;
+  }
+  
+  .weather-table th {
+      background: #584827;
+      color: #f9de90;
+  }
+  
+  .weather-table tr:nth-child(even) {
+      background: rgba(88, 72, 39, 0.2);
+  }
+  
+  .toggle-btn {
+      margin-top: 1rem;
+      background: #584827;
+      color: #f9de90;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+  
+  .toggle-btn:hover {
+      background: #c7a03c;
+  }
+
+  .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: calc(100vh - 60px);
+  }
+  
+  .converter-box {
+      background: rgba(88, 72, 39, 0.2);
+      backdrop-filter: blur(10px);
+      border: 2px solid #584827;
+      padding: 2rem;
+      border-radius: 20px;
+      width: 100%;
+      margin-bottom: 20px;
+  }
+  
+  h1 {
+      color: #f9de90;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+  }
+  
+  h2 {
+      color: #d5cec0;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+  }
+  
+  .grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+      .grid-container {
+          grid-template-columns: 1fr 1fr;
+      }
+  }
+  
+  .input-group {
+      margin-bottom: 1.5rem;
+  }
+  
+  label {
+      display: block;
+      color: #d5cec0;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+  }
+  
+  input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #584827;
+      border-radius: 8px;
+      background: rgba(88, 72, 39, 0.2);
+      font-size: 1rem;
+      color: #d5cec0;
+  }
+  
+  input:focus {
+      outline: 2px solid #c7a03c;
+      background: rgba(88, 72, 39, 0.3);
+  }
+  
+  .btn {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #f9de90;
+      background: #584827;
+  }
+  
+  .btn:hover {
+      background: #c7a03c;
+      transform: translateY(-2px);
+  }
+  
+  .weather-btn {
+      background: #584827;
+  }
+  
+  .weather-btn:hover {
+      background: #c7a03c;
+  }
+  
+  .hidden {
+      display: none;
+  }
+  
+  
+  .chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: rgba(88, 72, 39, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      z-index: 1000;
+      border: 2px solid #584827;
+  }
+  
+  .chatbot-header {
+      background: #584827;
+      color: #f9de90;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .chatbot-header h3 {
+      margin: 0;
+      font-size: 1rem;
+  }
+  
+  .toggle-chat {
+      background: none;
+      border: none;
+      color: #f9de90;
+      cursor: pointer;
+      font-size: 1.2rem;
+  }
+  
+  .chatbot-messages {
+      height: 300px;
+      overflow-y: auto;
+      padding: 15px;
+  }
+  
+  .message {
+      margin-bottom: 10px;
+      padding: 8px 12px;
+      border-radius: 15px;
+      max-width: 80%;
+      word-wrap: break-word;
+  }
+  
+  .bot-message {
+      background: #584827;
+      color: #d5cec0;
+      margin-right: auto;
+      border-bottom-left-radius: 5px;
+  }
+  
+  .user-message {
+      background: #c7a03c;
+      color: #2d230f;
+      margin-left: auto;
+      border-bottom-right-radius: 5px;
+  }
+  
+  .chatbot-input {
+      display: flex;
+      padding: 10px;
+      background: #2d230f;
+      border-top: 1px solid #584827;
+  }
+  
+  .chatbot-input input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #584827;
+      border-radius: 20px;
+      margin-right: 8px;
+      background: rgba(88, 72, 39, 0.2);
+      color: #d5cec0;
+  }
+  
+  .chatbot-input button {
+      background: #584827;
+      color: #f9de90;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+  }
+  
+  .chatbot-input button:hover {
+      background: #c7a03c;
+  }
+
+  option{
+    color: black;
+  }
