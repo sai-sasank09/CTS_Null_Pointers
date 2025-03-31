@@ -87,9 +87,10 @@ function displayCars(containerId, cars, isSedan) {
             <img src="${carImage}" alt="${car.name}" class="car-image">
             <div class="car-info">
                 <h3>${car.name}</h3>  <!-- Display the car name -->
-                <div class="price-tag">${formatCurrency(car.regularPrice)}
+                 <div class="price-tag"> ${formatCurrency(car.salePrice)}
+               
                     <span style="text-decoration: line-through; color: #999; font-size: 0.8em; margin-left: 8px;">
-                        ${formatCurrency(car.salePrice)}
+                        ${formatCurrency(car.regularPrice)}
                     </span>
                 </div>
                 <div class="car-specs">
