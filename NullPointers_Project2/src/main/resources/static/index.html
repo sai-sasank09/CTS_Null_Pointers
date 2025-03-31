@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Car Dealership | Null Pointers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="team-name">Null Pointers</div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Luxury Vehicle Collection</h1>
+        
+        <div class="category-buttons">
+            <button id="sedan-btn" class="category-btn">Premium Sedans</button>
+            <button id="suv-btn" class="category-btn">Luxury SUVs</button>
+        </div>
+        
+        <div class="car-section">
+            <div id="sedans-list" class="car-list"></div>
+            <div id="suvs-list" class="car-list"></div>
+        </div>
+        
+        <div class="forms-section">
+            <div class="form-container">
+                <h3>Add New Sedan</h3>
+                <form id="sedan-form">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="number" name="speed" placeholder="Speed (mph)" required min="0">
+                    <input type="number" name="regularPrice" placeholder="Regular Price ($)" required min="0">
+                    <input type="text" name="color" placeholder="Color" required>
+                    <input type="number" name="year" placeholder="Year" required min="1900" max="2025">
+                    <input type="number" name="manufacturerDiscount" placeholder="Manufacturer Discount ($)" required min="0">
+                    <button type="submit">Add Luxury Sedan</button>
+                </form>
+            </div>
+            
+            <div class="form-container">
+                <h3>Add New SUV</h3>
+                <form id="suv-form">
+                    <input type="text" name="name" placeholder="Name" id="">
+                    <input type="number" name="speed" placeholder="Speed (mph)" required min="0">
+                    <input type="number" name="regularPrice" placeholder="Regular Price ($)" required min="0">
+                    <input type="text" name="color" placeholder="Color" required>
+                    <input type="number" name="weight" placeholder="Weight (lbs)" required min="0">
+                    <button type="submit">Add Luxury SUV</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
