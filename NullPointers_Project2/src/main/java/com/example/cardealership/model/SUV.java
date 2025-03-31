@@ -15,7 +15,15 @@ import lombok.NoArgsConstructor;
 public class SUV extends Car implements Discountable {
     private double weight;
     
-    @Override
+    public double getWeight() {
+		return weight;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	@Override
     public double getDiscountRate() {
         return weight > 2000 ? 0.10 : 0.20;
     }
