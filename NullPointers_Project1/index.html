@@ -39,7 +39,7 @@
                         <input type="number" id="kelvin" placeholder="Enter temperature in Kelvin">
                     </div>
 
-                    <button id="convertBtn" class="btn">Calculate</button>
+                    <button id="convertBtn" class="btn">Convert</button>
                 </div>
 
                 <!-- Weather Section -->
@@ -48,50 +48,54 @@
                     
                     <div class="input-group">
                         <label for="citySelect">Select City</label>
-                        <select style="color: white;" id="citySelect" class="city-select">
+                        <select id="citySelect" class="city-select">
                             <option value="">Select a city</option>
-                            <option value="Chennai">Chennai</option>
-                            <option value="Hyderabad">Hyderabad</option>
-                            <option value="Bangalore">Bangalore</option>
-                            <option value="Delhi">Delhi</option>
+                            <option value="London">London</option>
+                            <option value="New York">New York</option>
+                            <option value="Tokyo">Tokyo</option>
+                            <option value="Paris">Paris</option>
+                            <option value="Dubai">Dubai</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Sydney">Sydney</option>
                             <option value="Mumbai">Mumbai</option>
-                            <option value="Jaipur">Jaipur</option>
-                            <option value="Coimbatore">Coimbatore</option>
-                            <option value="Kolkata">Kolkata</option>
-                            <option value="Lucknow">Lucknow</option>
-                            <option value="Pune">Pune</option>
+                            <option value="Berlin">Berlin</option>
+                            <option value="Toronto">Toronto</option>
                         </select>
                     </div>
 
                     <button id="getWeatherBtn" class="btn weather-btn">Get Weather</button>
-                    <button id="toggleViewBtn" class="btn toggle-btn hidden">Toggle Table View</button>
-
-                    <div id="weatherResult" class="weather-result hidden">
-                        <div id="weatherInfo"></div>
-                    </div>
-
-                    <div id="weatherTable" class="weather-table hidden">
-                        <h3>Temperature Comparison Table</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>City</th>
-                                    <th>Temperature (°C)</th>
-                                    <th>Difference (°C)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="temperatureTableBody"></tbody>
-                        </table>
-                    </div>
+                    <button id="toggleViewBtn" class="btn toggle-btn hidden">Toggle View</button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Temperature Visualization -->
+        <div class="visualization-container hidden">
+            <div class="chart-container">
+                <canvas id="temperatureChart"></canvas>
             </div>
         </div>
 
         <!-- City Cards Container -->
         <div id="cityCards" class="city-cards"></div>
 
+        <!-- Weather Table -->
+        <div id="weatherTable" class="weather-table hidden">
+            <h3>Temperature Comparison Table</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Temperature (°C)</th>
+                        <th>Difference (°C)</th>
+                    </tr>
+                </thead>
+                <tbody id="temperatureTableBody"></tbody>
+            </table>
+        </div>
+
         <!-- Chatbot Section -->
-        <!-- <div class="chatbot-container">
+        <div class="chatbot-container">
             <div class="chatbot-header">
                 <h3>Temperature Assistant</h3>
                 <button id="toggleChat" class="toggle-chat">▼</button>
@@ -101,8 +105,8 @@
                 <input type="text" id="userInput" placeholder="Type your message...">
                 <button id="sendMessage">Send</button>
             </div>
-        </div> -->
+        </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>
