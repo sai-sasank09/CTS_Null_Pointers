@@ -13,7 +13,23 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class Sedan extends Car implements Discountable {
-    private int year;
+    public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public double getManufacturerDiscount() {
+		return manufacturerDiscount;
+	}
+
+	public void setManufacturerDiscount(double manufacturerDiscount) {
+		this.manufacturerDiscount = manufacturerDiscount;
+	}
+
+	private int year;
     private double manufacturerDiscount;
     
     @Override
@@ -25,4 +41,6 @@ public class Sedan extends Car implements Discountable {
     public double getSalePrice() {
         return super.getSalePrice() - manufacturerDiscount;
     }
+
+	
 }
