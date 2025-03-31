@@ -17,7 +17,47 @@ public class Car {
     private String name; // Add this field to Car.java
 
 
-    private double speed;
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(double speed) {
+		this.speed = speed;
+	}
+
+	public double getRegularPrice() {
+		return regularPrice;
+	}
+
+	public void setRegularPrice(double regularPrice) {
+		this.regularPrice = regularPrice;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	private double speed;
     private double regularPrice;
     private String color;
     
